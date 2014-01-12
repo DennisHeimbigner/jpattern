@@ -6,7 +6,7 @@
 * Minimum JDK Level: JDK 1.5
 
 The goal of the **jpattern** project is to provide
-a reference implementation, Java, of the Snobol4
+a reference implementation, in Java, of the Snobol4
 primitives as implemented by Robert Dewar in Ada.
 
 ## Introduction
@@ -69,6 +69,8 @@ is in the PATH environment variable.
 
 * clean: Delete all generated files.
 
+* test: Perform testing in `src/test/java/jpattern/test`
+
 The final product is the jar file called `jpattern.jar`.
 For convenience, a version of that jar file is included.
 It will have been compiled with jdk1.7.
@@ -94,15 +96,15 @@ and `doc/refman.html`.
 
 Minor version levels are indicated in parentheses.
 * (0) Fixed a number of foolish errors, some introduced in version 1.2
-(Thanks to Arjan Loeffen of Valid/Vision.). These include:
-	** The pattern fence(arb &amp; "b") &amp; "c"
+      (Thanks to Arjan Loeffen of Valid/Vision.). These include:
+	+ The pattern `fence(arb &amp; "b") &amp; "c"`
 		matched against subject "b" throws
 		java.lang.ArrayIndexOutOfBoundsException: -2147483647 , while
-		fence(arb &amp; "b") doesn't. 
-	** The pattern len(1) fails on subject "a".
-	** The pattern "a" ** MATCH on subject "a"
+		`fence(arb &amp; "b")` doesn't. 
+	+ The pattern `len(1)` fails on subject "a".
+	+ The pattern `"a" ** MATCH` on subject "a"`
 	     throws java.lang.ArrayIndexOutOfBoundsException: -2147483647.
-	** The pattern bal("()") doesn't seem to work, while bal does.
+	+ The pattern `bal("()")` doesn't seem to work, while bal does.
 	</ul>
 * (0) Modified the test set files to all extend Test.java to handle
          the common code.
