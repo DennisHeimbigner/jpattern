@@ -105,7 +105,6 @@ Minor version levels are indicated in parentheses.
 	+ The pattern `"a" ** MATCH` on subject "a"`
 	     throws java.lang.ArrayIndexOutOfBoundsException: -2147483647.
 	+ The pattern `bal("()")` doesn't seem to work, while bal does.
-	</ul>
 * (0) Modified the test set files to all extend Test.java to handle
          the common code.
 * (0) Did some significant refactoring.
