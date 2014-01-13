@@ -17,9 +17,10 @@
 <!-- Path properties -->
 <property name="TESTDATADIR" value="${TOPDIR}/src/test/data"/>
 <property name="BASELINE" value="${TESTDATADIR}/baseline"/>
-<property name="BUILDDIR" value="./build"/>
+<property name="TESTDIR" value="${TOPDIR}/src/test/java/jpattern/test"/>
+<property name="BUILDDIR" value="${TESTDIR}/build"/>
 <property name="CLASSDIR" value="${BUILDDIR}/classes"/>
-<property name="PATTERNDIR" value="./patterns"/>
+<property name="PATTERNDIR" value="${TESTDIR}/patterns"/>
 
 <property name="JPATTERNJAR" value="${TOPDIR}/jpattern.jar"/>
 
