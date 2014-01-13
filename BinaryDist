@@ -1,0 +1,15 @@
+README.md
+gnat-license.txt
+license.txt
+doc/jpattern.html
+doc/refman.html
+doc/Matching.html
+Ada/G-SPIPAT.ADB
+Ada/G-SPIPAT.ADS
+Ada/G-SPITBO.ADB
+Ada/G-SPITBO.ADS
+Ada/G-SPTABO.ADS
+Ada/G-SPTAIN.ADS
+Ada/G-SPTAVS.ADS
+jpattern-src.jar
+jpattern.jar

@@ -43,7 +43,7 @@ and bug fixes and extensions are welcome.
 ## Download
 This software is hosted on github and me be obtained
 using the git command:
-    git clone https://github.com/Unidata/jpattern
+    git clone https://github.com/Unidata/jpattern.git
 
 In addition, earlier versions may also be available here.
     http://www.unidata.ucar.edu/staff/dmh
