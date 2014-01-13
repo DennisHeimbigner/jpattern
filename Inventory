@@ -1,5 +1,4 @@
 Inventory
-BinaryDist
 README.md
 build.xml
 gnat-license.txt
@@ -7,6 +6,7 @@ license.txt
 loeffen.txt
 doc/jpattern.html
 doc/refman.html
+doc/Makefile
 doc/Matching.html
 Ada/G-SPIPAT.ADB
 Ada/G-SPIPAT.ADS
