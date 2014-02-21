@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <project name="jpattern" default="all" basedir=".">
 
-<property name="RELEASE" value="2.0"/>
-<property name="RELEASEDATE" value="2007-10-01"/>
+<property name="RELEASE" value="2.2"/>
+<property name="RELEASEDATE" value="2014-02-21"/>
 
 <!-- Path properties -->
 
@@ -88,10 +88,10 @@ QuotedString.java
 <target name="compile" depends="classdir">
         <javac includeantruntime="false"
                destdir="${CLASSDIR}"
-               srcdir="src/main/java/jpattern"
-               includes="${ALLSRC}">
+               srcdir="src/main/java/jpattern">
         </javac>
 </target>
+<!--includes="${ALLSRC}"-->
 
 <target name="classdir"><mkdir dir="${CLASSDIR}" /></target>
 
@@ -108,13 +108,6 @@ QuotedString.java
 </target>
 
 <!-- this is used to create a clean directory for github -->
-
-<path id="">
-      <fileset dir="${BUILDDIR}" includes="Test*.diff">
-	           <not><size value="0"/></not>
-      </fileset>
-</path>
-
 
 <!--
 ##################################################
@@ -138,9 +131,14 @@ Github and Distribution support for Developers
 
 <target name="git.export">
   <delete includeemptydirs="true">
-    <fileset dir="${EXPORT}/jpattern" includes="**/*"/>
+    <fileset dir="${EXPORT}/jpattern"
+             includes="**/*"
+             excludes=".git/**"
+    />
   </delete>
-  <copy dir="${git.dst.dir}" todir="${EXPORT}/jpattern"/>
+  <copy todir="${EXPORT}/jpattern">
+	<fileset dir="${git.dst.dir}"/>
+  </copy>
 </target>
 
 <!-- Create a pure source distribution -->
@@ -161,6 +159,7 @@ Github and Distribution support for Developers
              inheritall="true" trim="true">
 	<param name="INSERTDIR" value="${dist.dir}"/>
     </foreach>
+    <zip destfile="${JPATTERNJAR.BIN}" basedir="${dist.dir}"/>
 </target>
 
 <!-- Create a Complete Distribution -->
@@ -170,6 +169,8 @@ Github and Distribution support for Developers
     <!-- zip up -->
     <zip destfile="${JPATTERNJAR.ALL}" basedir="${git.dir}"/>
 </target>
+
+<target name="dist.all" depends="dist,dist.bin"/>
 
 <!-- UTILITY TARGETS -->
 

@@ -1,0 +1,10 @@
+Example 14b
+Testclass: jpattern.test.Test14b
+Defined patterns:
+TestPattern=PC_R_Enter & (PC_BreakX_S(" t") |= ((PC_BreakX_S_X(" t") |= (PC_BreakX_S_X|...)))) & PC_Assign_Imm(+result) & PC_Char('.')
+match: subject="this is a test ." pattern=TestPattern
+fail.
+(non-pattern) vars after:
+----------
+result=[|| |this| |this is| |this is a| |this is a | |this is a tes| |this is a test|]
+----------

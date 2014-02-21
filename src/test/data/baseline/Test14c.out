@@ -1,0 +1,12 @@
+Example 14c
+Testclass: jpattern.test.Test14c
+Defined patterns:
+TestPattern=PC_R_Enter & (PC_BreakX_V(+Digit) |= ((PC_BreakX_V_X(+Digit) |= (PC_BreakX_V_X|...)))) & PC_Assign_Imm(+result) & PC_R_Enter & PC_Span_V(+Digit) & PC_Assign_Imm(+span) & PC_Fail
+match: subject="ab123cd4657ef23" pattern=TestPattern
+fail.
+(non-pattern) vars after:
+----------
+Digit="0123456789"
+result=[|ab| |ab1| |ab12| |ab123cd| |ab123cd4| |ab123cd46| |ab123cd465| |ab123cd4657ef| |ab123cd4657ef2|]
+span=[|123| |23| |3| |4657| |657| |57| |7| |23| |3|]
+----------
